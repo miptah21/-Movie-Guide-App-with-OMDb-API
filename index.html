@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/img/logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie OMDb API</title>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                fontFamily: {
+                    poppins: ["Poppins"],
+                }
+            }
+          }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            height: 100vh;
+            background: linear-gradient(#1c1c1c 50%, #ffb92a 50%);
+        }
+        .container {
+            padding: 4em 1.8em;
+        }
+        #result {
+            color: #fff;
+        }
+        .info {
+            position: relative;
+            display: grid;
+            grid-template-columns: 4fr 8fr;
+            margin-top: 1.2em;
+        }
+        .poster {
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.06em;
+            margin: 0.6em 0 0.9em 0;
+        }
+        .rating img {
+            width: 1.2em;
+        }
+        .rating h4 {
+            display: inline-block;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        .details {
+            display: flex;
+            font-size: 0.95em;
+            gap: 1em;
+            justify-content: center;
+            color: #a0a0a0;
+            margin: 0.6em 0;
+            font-weight: 300;
+        }
+        .genre {
+            display: flex;
+            justify-content: space-around;
+        }
+        .genre div {
+            border: 1px solid #a0a0a0;
+            font-size: 0.75em;
+            padding: 0.4em 1.6em;
+            border-radius: 0.4em;
+            font-weight: 300;
+        }
+        h3{
+            font-weight: 500;
+            margin-top: 1.2em;
+        }
+        p {
+            font-size: 0.9em;
+            font-weight: 300;
+            line-height: 1.8em;
+            text-align: justify;
+            color: #a0a0a0;
+        }
+        .msg {
+            text-align: center;
+        }
+        .star {
+            width: 500%;
+            height: auto;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                font-size: 14px;
+            }
+            .poster {
+                margin: auto;
+                width: auto;
+                max-height: 10.8em;
+            }
+            .info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+</head>
+<body class="font-poppins">
+    <div class="container mt-60 max-w-lg mx-auto drop-shadow-xl rounded-lg bg-gray-800 font-semibold">
+        <div class="search-container flex justify-center">
+            <input id="movie-name" class="w-full mr-2 px-4 py-2 rounded-md border-gray-300 focus:border-yellow-500 focus:outline-none focus:ring-yellow-500" type="text" placeholder="Search...">
+            <button id="search-btn" class="bg-gray-700 hover:bg-gray-600 focus:outline-none px-4 py-2 rounded-md text-white">
+                Search
+            </button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="key.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
